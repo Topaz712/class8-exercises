@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Buttons DOM Exercise</title>
+  <style>
+    .btn_onclick {
+      padding: 10px 15px;
+      font-size: 15px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- //Exercise 3
+  //Create a new HTML file named multiple_buttons.html. In this file, include at least three buttons with the class btn_onclick. Each button can have unique text like "Button 1", "Button 2", and so on. -->
+  <button class="btn btn_onclick" style="background-color: lightblue;">
+    Button 1
+  </button>
+  <button class="btn btn_onclick" style="background-color: lightslategray">
+    Button 2
+  </button>
+  <button class="btn btn_onclick" style="background-color: lightpink;">
+    Button 3
+  </button>
+  
+  <!-- //In the same HTML file, create a <script> section. -->
+  <script>
+  //Inside the script element, use the querySelectorAll method to select all buttons with the class btn_onclick.
+  const buttons = document.querySelectorAll('.btn_onclick');
+  //Use the forEach method to loop over each button in the node list.
+  //For each button, add an onclick event that will change the document's background color when the button is clicked.
+  //Instead of setting a static color like #a7f3d0, make the color dynamic.
+  // For an added challenge, assign a different color to each button so that when clicked, they change the background color to a unique hue.
+
+  function changeBackgroundColor(e) {
+    const button = event.target;
+    const bGroundColor = window.getComputedStyle(button). backgroundColor;
+    document.body.style.backgroundColor = bGroundColor;
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', changeBackgroundColor);
+    });
+
+  </script>
+
+</body>
+</html>
